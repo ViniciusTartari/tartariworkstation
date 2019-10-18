@@ -1,6 +1,6 @@
-# My pos-installation script to Debian 9
+# My pos-installation script to Debian 9 and 10
 
-## My bash script to automate software installation on Debian 9
+## My bash script to automate software installation on Debian 9 and 10
 
 ### List of softwares
 
@@ -20,7 +20,6 @@
 - Insomnia - via snap
 - Instagraph - via snap
 - Kate - via apt
-- Lutris - via apt
 - MEGAsync - via dpkg
 - MongoDB - via docker
 - MySQL - via docker
