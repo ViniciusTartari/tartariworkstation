@@ -16,7 +16,8 @@ echo -e "\033[01;32mAdd 32 bits architecture to dpkg\033[01;37m"
 sudo dpkg --add-architecture i386 
 
 ## Add non-free to official repositories
-echo -e "\033[01;32mAdd non-free to official repositories\033[01;37m" 
+echo -e "\033[01;32mAdd contrib and non-free to official repositories\033[01;37m" 
+sudo apt-add-repository contrib
 sudo apt-add-repository non-free
 
 ## Atualizando o repositório ##
@@ -31,7 +32,7 @@ echo -e "\033[01;32mAdd third party repositories\033[01;37m"
 echo -e "\033[01;32mWine\033[01;37m"
 wget -nc https://dl.winehq.org/wine-builds/winehq.key 
 sudo apt-key add winehq.key 
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ buster main' 
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ buster main' -y
 ## -------/Wine------
 
 ## -------VirtualBox-------
@@ -43,11 +44,16 @@ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-
 ## -------Typora-------
 echo -e "\033[01;32mTypora\033[01;37m"
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo add-apt-repository 'deb https://typora.io/linux ./' -y
 ## -------/Typora------
 
+## --------cURL------
+echo -e "\033[01;32mInstall cURL\033[01;37m"
+sudo apt install curl
+## -------/cURL------
+
 ## -------NodeJS-------
-echo -e "\033[01;32mNodeJS\033[01;37m"
+echo -e "\033[01;32mNodeJS - LTS (v10)\033[01;37m"
 sudo curl -sL https://deb.nodesource.com/setup_10.x | bash -
 ## -------/NodeJS------
 
@@ -61,7 +67,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 echo -e "\033[01;32mDocker\033[01;37m"
 sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" -y
 ## -------/Docker------
 
 ## Atualizando o repositório depois da adição de novos repositórios ##
@@ -130,13 +136,18 @@ echo -e "\033[01;32mDependencies to gnome-extensions\033[01;37m"
 sudo apt install gir1.2-gtop-2.0 lm-sensors -y
 
 # Gnome extensions
-echo -e "\033[01;32mGnome-extensions\033[01;37m"
-sudo apt install gnome-shell-extension-caffeine gnome-shell-extension-dashtodock gnome-shell-extension-pixelsaver -y
+# echo -e "\033[01;32mGnome-extensions\033[01;37m"
+# sudo apt install gnome-shell-extension-caffeine gnome-shell-extension-dashtodock gnome-shell-extension-pixelsaver gnome-shell-extension-appindicator gnome-shell-extension-appindicator -y
 
 # Vitals - gnome extension
-echo -e "\033[01;32mGone-extensions-vitals\033[01;37m"
+# echo -e "\033[01;32mGone-extensions-vitals\033[01;37m"
+# mkdir -p ~/.local/share/gnome-shell/extensions
+# git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+
+# Get extensions on my github
+echo -e "\033[01;32mGetting gnome-extension on my github\033[01;37m"
 mkdir -p ~/.local/share/gnome-shell/extensions
-git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+git clone https://github.com/ViniciusTartari/gnome-extensions.git ~/.local/share/gnome-shell/extensions
 
 ## ----------------------------------------------------------------------
 
@@ -152,6 +163,7 @@ sudo snap install robo3t-snap
 sudo snap install go --classic
 sudo snap install code --classic
 sudo snap install heroku --classic
+sudo snap install gitkraken
 sudo snap install android-studio --classic
 sudo snap install redis-desktop-manager
 sudo snap install node-red
