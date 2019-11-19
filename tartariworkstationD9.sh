@@ -15,7 +15,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 echo -e "\033[01;32mAdd 32 bits architecture to dpkg\033[01;37m" 
 sudo dpkg --add-architecture i386 
 
-## Add non-free to official repositories
+## Add contrib e non-free aos repositorios oficiais
 echo -e "\033[01;32mAdd contrib and non-free to official repositories\033[01;37m" 
 sudo apt-add-repository contrib
 sudo apt-add-repository non-free
@@ -27,12 +27,6 @@ sudo apt update
 
 ## Adicionando repositórios de terceiros e suporte a Snap ##
 echo -e "\033[01;32mAdd third party repositories\033[01;37m"
-
-## -------Lutris-------
-echo -e "\033[01;32mLutris\033[01;37m"
-echo "deb http://download.opensuse.org/repositories/home:/strycore/Debian_9.0/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list
-wget -q https://download.opensuse.org/repositories/home:/strycore/Debian_9.0/Release.key -O- | sudo apt-key add -
-## -------/Lutris------
 
 ## -------Wine-------
 echo -e "\033[01;32mWine\033[01;37m"
@@ -57,11 +51,6 @@ sudo add-apt-repository 'deb https://typora.io/linux ./' -y
 echo -e "\033[01;32mInstall cURL\033[01;37m"
 sudo apt install curl
 ## -------/cURL------
-
-## -------NodeJS-------
-echo -e "\033[01;32mNodeJS\033[01;37m"
-sudo curl -sL https://deb.nodesource.com/setup_10.x | bash -
-## -------/NodeJS------
 
 ## -------Yarn--------
 echo -e "\033[01;32mYarn\033[01;37m"
@@ -96,10 +85,6 @@ wget -c https://github.com/meetfranz/franz/releases/download/v5.3.3/franz_5.3.3_
 echo -e "\033[01;32mMEGAsync\033[01;37m"
 wget -c https://mega.nz/linux/MEGAsync/Debian_9.0/amd64/megasync-Debian_9.0_amd64.deb
 
-## Steam
-echo -e "\033[01;32mSteam\033[01;37m"
-wget -c http://repo.steampowered.com/steam/archive/precise/steam_latest.deb
-
 ## Team Viewer
 echo -e "\033[01;32mTeam Viewer\033[01;37m"
 wget -c https://dl.teamviewer.com/download/linux/version_14x/teamviewer_14.6.2452_amd64.deb
@@ -120,15 +105,10 @@ echo -e "\033[01;32mSnap\033[01;37m"
 sudo apt install snapd -y
 
 ## Nvidia
-echo -e "\033[01;32mNvidia detect and driver\033[01;37m"
-sudo apt install nvidia-detect -y
-nvidia-detect
-sudo apt install nvidia-driver -y
-
-## Lutris
-echo -e "\033[01;32mLutris\033[01;37m"
-sudo apt install lutris -y
-sudo apt install lutris libvulkan1 libvulkan1:i386 -y
+# echo -e "\033[01;32mNvidia detect and driver\033[01;37m"
+# sudo apt install nvidia-detect -y
+# nvidia-detect
+# sudo apt install nvidia-driver -y
 
 # Wine
 echo -e "\033[01;32mWine and dependencies\033[01;37m"
@@ -140,7 +120,7 @@ sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 # Programas
 echo -e "\033[01;32mGcc, git, build-essential and others\033[01;37m"
-sudo apt install gcc git build-essential filezilla gimp gparted htop inkscape kate virtualbox-6.0 typora vlc nodejs yarn libavcodec-extra -y
+sudo apt install gcc git build-essential filezilla gimp gparted htop inkscape kate virtualbox-6.0 typora vlc yarn libavcodec-extra -y
 
 # To gnome extensions
 echo -e "\033[01;32mDependencies to gnome-extensions\033[01;37m"
@@ -172,15 +152,15 @@ sudo snap install audacity
 sudo snap install discord
 sudo snap install robo3t-snap
 sudo snap install go --classic
+sudo snap install node --classic
 sudo snap install code --classic
 sudo snap install heroku --classic
-sudo snap install android-studio --classic
+sudo snap install gitkraken
 sudo snap install redis-desktop-manager
 sudo snap install node-red
 sudo snap install snap-store
 sudo snap install spotify
 sudo snap install photogimp
-sudo snap install instagraph
 
 ## ----------------------------------------------------------------------
 
@@ -190,10 +170,6 @@ sudo docker pull mongo
 sudo docker pull mysql
 
 ## ----------------------------------------------------------------------
-
-## Atualizando npm
-echo -e "\033[01;32mUpdating npm\033[01;37m"
-sudo npm i -g npm
 
 ## Finalização, atualização e limpeza##
 echo -e "\033[01;32mFinish the installations\033[01;37m"
