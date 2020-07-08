@@ -144,7 +144,7 @@ git clone https://github.com/ViniciusTartari/gnome-extensions.git ~/.local/share
 
 ## Instalando pacotes Snap ##
 echo -e "\033[01;32mInstalling snap packages\033[0m"
-echo -e "\033[01;32mArduino, insomnia, audacity, discord, robo3t, go, vscode, heroku, android-studio\033[0m"
+echo -e "\033[01;32mArduino, insomnia, audacity, discord, robo3t, go, node, vscode, heroku, android-studio\033[0m"
 echo -e "\033[01;32mRedis, node-red, spotify, photogimp, instagraph and snap-store\033[0m"
 sudo snap install arduino-mhall119
 sudo snap install insomnia
@@ -152,7 +152,7 @@ sudo snap install audacity
 sudo snap install discord
 sudo snap install robo3t-snap
 sudo snap install go --classic
-sudo snap install node --classic
+sudo snap install node --channel=14/stable --classic
 sudo snap install code --classic
 sudo snap install heroku --classic
 sudo snap install gitkraken
