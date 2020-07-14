@@ -23,6 +23,11 @@ sudo apt-add-repository non-free
 ## Atualizando o repositório ##
 echo -e "\033[01;32mRunning the apt update\033[0m" 
 sudo apt update
+
+## Instalando firmwares ##
+echo -e "\033[01;32mInstalling firmwares (firmware-linux-nonfree)\033[0m"
+sudo apt install firmware-linux-nonfree -y
+
 ## ----------------------------------------------------------------------
 
 ## Adicionando repositórios de terceiros e suporte a Snap ##
