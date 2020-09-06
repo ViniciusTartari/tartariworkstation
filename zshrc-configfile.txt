@@ -114,6 +114,11 @@ alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 alias aptup="sudo apt update && sudo apt upgrade"
 alias aptcl="sudo apt autoclean && sudo apt autoremove"
+alias github="cd ~/github"
+alias sshstatus="sudo service ssh status"
+alias sshstart="sudo service ssh start"
+alias sshstop="sudo service ssh stop"
+alias sshrestart="sudo service ssh restart"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
