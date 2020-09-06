@@ -2,7 +2,7 @@
 
 ## Pos installation script
 ## ******* TO DEBIAN 9 *******
-## By: Vinicius Tartari - Sony Vaio VPC236FMB
+## By: Vinicius Tartari - Sony Vaio VPC236FMB - ***OLD***
 
 echo -e "\033[01;32mMy pos-installation script - Debian 9 - by Vinicius Tartari\033[0m" 
 
